@@ -482,15 +482,14 @@ class Builder
      */
     public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
-        $page = $page ?: Paginator::resolveCurrentPage($pageName);
-
-        $perPage = $perPage ?: $this->model->getPerPage();
-
         $query = $this->toBase();
 
         $total = $query->getCountForPagination();
 
-        $results = $total ? $this->forPage($page, $perPage)->get($columns) : [];
+        $results = $total ? $this->forPage(
+            $page = $page ?: Paginator::resolveCurrentPage($pageName),
+            $perPage = $perPage ?: $this->model->getPerPage()
+        )->get($columns) : [];
 
         return new LengthAwarePaginator($results, $total, $perPage, $page, [
             'path' => Paginator::resolveCurrentPath(),

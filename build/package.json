@@ -1,10 +1,5 @@
 {
   "private": true,
-  "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
-  },
-<<<<<<< HEAD
   "engines": {
     "node": ">=5.0 <7",
     "npm": ">=3.3 <4"
@@ -30,7 +25,6 @@
     "isomorphic-style-loader": "1.0.0",
     "jsonwebtoken": "7.0.0",
     "markdown-it": "6.0.5",
-    "material-ui": "^0.15.4",
     "node-fetch": "1.5.3",
     "node-sass": "^3.8.0",
     "normalize.css": "4.1.1",
@@ -45,11 +39,7 @@
     "universal-router": "1.2.2",
     "whatwg-fetch": "1.0.0"
   },
-=======
->>>>>>> parent of 1efc83d... add react
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^5.0.0",
-    "bootstrap-sass": "^3.3.0"
+  "scripts": {
+    "start": "node server.js"
   }
 }

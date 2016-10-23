@@ -4,56 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "011cbe94b5d68d75c98aeba27f219dc5",
-    "content-hash": "2c64406bfeada68aa11c80d27a4ab914",
+    "hash": "23d342d2bb688712f84d0265f54813ee",
+    "content-hash": "948df7d115bd70f6c1f980efac5553ce",
     "packages": [
-        {
-            "name": "allantatter/laravel-react",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/allantatter/laravel-react.git",
-                "reference": "15c27e20a4bd6e309367a9147ba9a967c963eaff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/allantatter/laravel-react/zipball/15c27e20a4bd6e309367a9147ba9a967c963eaff",
-                "reference": "15c27e20a4bd6e309367a9147ba9a967c963eaff",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.4",
-                "phpspec/phpspec": "~2.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "AllanTatter\\React\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Allan Tatter",
-                    "email": "allan.tatter@gmail.com"
-                }
-            ],
-            "description": "Render React.js components seemlessly on the server side within Laravel Blade views.",
-            "keywords": [
-                "blade",
-                "laravel",
-                "react",
-                "reactjs"
-            ],
-            "time": "2015-09-02 09:19:20"
-        },
         {
             "name": "barryvdh/laravel-ide-helper",
             "version": "v2.2.1",
@@ -470,16 +423,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.2.41",
+            "version": "v5.2.40",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2"
+                "reference": "6195211140ed0881e89d79a296f893abc56987be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2",
-                "reference": "29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6195211140ed0881e89d79a296f893abc56987be",
+                "reference": "6195211140ed0881e89d79a296f893abc56987be",
                 "shasum": ""
             },
             "require": {
@@ -596,7 +549,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-07-20 13:13:06"
+            "time": "2016-07-19 19:46:25"
         },
         {
             "name": "league/flysystem",
@@ -2664,16 +2617,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.27",
+            "version": "4.8.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c062dddcb68e44b563f66ee319ddae2b5a322a90"
+                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c062dddcb68e44b563f66ee319ddae2b5a322a90",
-                "reference": "c062dddcb68e44b563f66ee319ddae2b5a322a90",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fc1d8cd5b5de11625979125c5639347896ac2c74",
+                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74",
                 "shasum": ""
             },
             "require": {
@@ -2732,7 +2685,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-07-21 06:48:14"
+            "time": "2016-05-17 03:09:28"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
