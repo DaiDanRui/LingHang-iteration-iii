@@ -1,0 +1,24 @@
+.common-card, .container {
+  margin: 10px 5px 0 5px; }
+
+.common-font-large {
+  font-size: 20px !important;
+  font-weight: 300 !important; }
+
+.common-font-normal {
+  font-size: 16px !important;
+  font-weight: 100 !important; }
+
+.common-font-small {
+  font-size: 12px !important; }
+
+.container {
+  background-color: #2e7576 !important; }
+  .container .title {
+    color: white !important; }
+
+.btn {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+/*# sourceMappingURL=ListHead.css.map */

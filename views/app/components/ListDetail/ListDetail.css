@@ -1,0 +1,46 @@
+.common-card, .container {
+  margin: 10px 5px 0 5px; }
+
+.common-font-large {
+  font-size: 20px !important;
+  font-weight: 300 !important; }
+
+.common-font-normal {
+  font-size: 16px !important;
+  font-weight: 100 !important; }
+
+.common-font-small {
+  font-size: 12px !important; }
+
+.flex-center, .container, .container .money, .container .time {
+  display: flex;
+  align-items: center;
+  align-content: center; }
+
+.container {
+  background-color: #56b6b7 !important;
+  flex-direction: row;
+  height: 60px; }
+  .container .avatar, .container .type, .container .people, .container .joinIn, .container .single {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center; }
+  .container .title {
+    flex-basis: 0;
+    flex-grow: 2; }
+    .container .title .single {
+      text-align: left; }
+  .container .money {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+    flex-direction: column; }
+  .container .time {
+    flex-basis: 0;
+    flex-grow: 2;
+    text-align: center;
+    flex-direction: column; }
+  .container .btn {
+    min-width: 0 !important; }
+
+/*# sourceMappingURL=ListDetail.css.map */

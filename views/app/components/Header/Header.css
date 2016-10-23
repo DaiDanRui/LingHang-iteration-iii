@@ -1,0 +1,31 @@
+.common-card {
+  margin: 10px 5px 0 5px; }
+
+.common-font-large, .container .title {
+  font-size: 20px !important;
+  font-weight: 300 !important; }
+
+.common-font-normal, .container .name, .container .btn {
+  font-size: 16px !important;
+  font-weight: 100 !important; }
+
+.common-font-small {
+  font-size: 12px !important; }
+
+.container {
+  background-color: #62b1f0 !important; }
+  .container .avatar {
+    align-self: center;
+    margin-right: 10px; }
+  .container .btn {
+    margin-right: 0 !important;
+    color: #ffffff !important; }
+  .container .title {
+    color: #ffffff !important;
+    margin-right: 50px; }
+  .container .name, .container .btn {
+    color: #ffffff !important; }
+  .container .link {
+    align-self: center; }
+
+/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,18 @@
+.common-card, .paper {
+  margin: 10px 5px 0 5px; }
+
+.common-font-large {
+  font-size: 20px !important;
+  font-weight: 300 !important; }
+
+.common-font-normal {
+  font-size: 16px !important;
+  font-weight: 100 !important; }
+
+.common-font-small {
+  font-size: 12px !important; }
+
+.paper {
+  background-color: #1893c0 !important; }
+
+/*# sourceMappingURL=Sidebar.css.map */

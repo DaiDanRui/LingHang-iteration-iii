@@ -1,0 +1,22 @@
+.common-card, .container {
+  margin: 10px 5px 0 5px; }
+
+.common-font-large {
+  font-size: 20px !important;
+  font-weight: 300 !important; }
+
+.common-font-normal {
+  font-size: 16px !important;
+  font-weight: 100 !important; }
+
+.common-font-small {
+  font-size: 12px !important; }
+
+.container .card {
+  background-color: #64b1d1 !important; }
+  .container .card .cardPic {
+    background-color: lightblue !important; }
+  .container .card .table .body {
+    background-color: #53c1e8 !important; }
+
+/*# sourceMappingURL=GraphCard.css.map */

@@ -1,0 +1,17 @@
+
+@import "../common";
+@import "../../vars";
+
+.container{
+  background-color: $green-dark-3 !important;
+  @extend .common-card;
+
+  .title{
+    color: white !important;
+  }
+}
+
+.btn{
+  margin-left: 10px;
+  margin-right: 10px;
+}

@@ -1,0 +1,41 @@
+.common-card {
+  margin: 10px 5px 0 5px; }
+
+.common-font-large {
+  font-size: 20px !important;
+  font-weight: 300 !important; }
+
+.common-font-normal {
+  font-size: 16px !important;
+  font-weight: 100 !important; }
+
+.common-font-small {
+  font-size: 12px !important; }
+
+.backImg {
+  background-image: url("../../assets/4.jpg");
+  background-size: 100%;
+  width: 45.5%;
+  margin: 20px 15px 0 15px; }
+
+.container {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .container .badge {
+    margin-left: 10px;
+    max-width: 50px;
+    padding: 10px 10px 10px 10px !important; }
+  .container .name, .container .steps {
+    flex-basis: 0;
+    flex-grow: 2; }
+  .container .badge, .container .menu {
+    flex-basis: 0;
+    flex-grow: 1; }
+  .container .steps {
+    text-align: center; }
+
+/*# sourceMappingURL=FriendCard.css.map */

@@ -1,0 +1,17 @@
+
+@import "../common";
+
+.main{
+  flex-basis: 0;
+  flex-grow: 2;
+  max-width: 550px;
+}
+
+.right{
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-direction: column;
+  max-width: 250px;
+}
+
+

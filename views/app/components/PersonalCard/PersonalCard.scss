@@ -1,0 +1,56 @@
+@import "../../vars";
+
+.backImg{
+  height: 500px;
+  width: 350px;
+  margin-top: 20px;
+  background-image: url("../../assets/4.jpg");
+  background-size: 100%;
+  display: inline-block;
+}
+
+.container{
+  background-color: rgba(0,0,0,0.5) !important;
+  width: 100%;
+  height: 100%;
+  padding: 10px 40px 0 40px;
+
+  .wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn, .name, .itemLeft{
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .list{
+    width: 100%;
+    flex-basis: 0;
+    flex-grow: 4;
+  }
+  .listItem{
+    display: flex;
+    flex-direction: row;
+  }
+  .itemLeft, .itemRight{
+    align-items: center;
+    text-align: left;
+  }
+  .itemRight{
+    flex-basis: 0;
+    flex-grow: 3;
+  }
+
+  .badge{
+    max-width: 120px;
+    flex-basis: 0;
+    flex-grow: 2;
+    padding: 10px !important;
+  }
+
+}
+
