@@ -1,7 +1,0 @@
-@import "../../vars";
-@import "../common";
-
-.paper{
-  @extend .common-card;
-  background-color: $blue-dark !important;
-}

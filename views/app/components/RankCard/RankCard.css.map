@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,wBAAY;EACV,MAAM,EAAE,cAAc;;AAGxB,kBAAkB;EAChB,SAAS,EAAE,eAAe;EAC1B,WAAW,EAAE,cAAc;;AAG7B,mBAAmB;EACjB,SAAS,EAAE,eAAe;EAC1B,WAAW,EAAE,cAAc;;AAG7B,kBAAkB;EAChB,SAAS,EAAE,eAAe;;ACd5B,UAAU;EACR,gBAAgB,EAAE,kBAAgB",
-"sources": ["../common.scss","RankCard.scss"],
-"names": [],
-"file": "RankCard.css"
-}

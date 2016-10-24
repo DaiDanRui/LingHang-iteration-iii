@@ -1,53 +1,46 @@
 /**
- * Created by raychen on 2016/10/18.
+ * Created by chendanni on 16/10/24.
  */
+import React, { Component, PropTypes } from 'react';
+// import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
 
-import React, {Component} from 'react'
-
-import Paper from 'material-ui/Paper'
-import TextField from 'material-ui/TextField'
-import RaisedButton from 'material-ui/RaisedButton'
-import {Link} from 'react-router'
+import FlatButton from 'material-ui/FlatButton';
 
 import s from './LoginCard.scss'
-import {blueDark, blue, blueLight} from '../../config'
-import {darkBlack} from 'material-ui/styles/colors'
+
+
+const buttonStyle = {
+    marginTop: '14px'
+};
 
 class LoginCard extends Component{
-
     render(){
-        return (
-                <Paper className={s.card} zDepth={2}>
-                    <TextField
-                        inputStyle={{color: darkBlack}}
-                        hintText="username"
-                        fullWidth={true}
-                    />
-                    <TextField
-                        inputStyle={{color: darkBlack}}
-                        hintText="password"
-                        fullWidth={true}
-                        type="password"
-                    />
-                    <Link to="/home">
-                        <RaisedButton
-                            backgroundColor={blueDark}
-                            fullWidth={true}
-                            label="login"
-                            className={s.btn}
-                        />
-                    </Link>
-                    <Link to="/register">
-                        <RaisedButton
-                            backgroundColor={blueLight}
-                            fullWidth={true}
-                            label="sign up"
-                            className={s.btn}
-                        />
-                    </Link>
-                </Paper>
+        return(
+            <Paper className={s.card}>
+                <p className={s.cardTitle}>Welcome :D</p>
+                <TextField
+                    fullWidth={true}
+                    hintText="username"
+                /><br />
+                <TextField
+                    fullWidth={true}
+                    type="password"
+                    hintText="password"
+                /><br />
+                <RaisedButton
+                    label="LOGIN"
+                    style={buttonStyle}
+                    primary={true}
+                    fullWidth={true} />
+                <RaisedButton label="SIGN UP" style={buttonStyle} fullWidth={true} />
+                <p>忘记密码?</p>
+            </Paper>
         );
     }
 }
-
-export default LoginCard;
+// export default withStyles(LoginCard,s);
+export default LoginCard
