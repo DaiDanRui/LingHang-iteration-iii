@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  p {
+    display: inline;
+  }
+}
+
+.pic {
+  height: 100px;
+  width: 100px;
+  margin-right: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+}
