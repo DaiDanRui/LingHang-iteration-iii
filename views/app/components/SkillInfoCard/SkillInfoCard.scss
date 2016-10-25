@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  margin:14px auto;
+}
+.comment_avatar {
+  display: flex;
+  flex-direction: row;
+}
+.comment_info {
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 0
+  }
+}

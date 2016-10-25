@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+}
+.detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+}

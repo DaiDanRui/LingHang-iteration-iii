@@ -9,15 +9,15 @@ import DoneIcon from 'material-ui/svg-icons/Action/done';
 import RefuseIcon from 'material-ui/svg-icons/Content/clear';
 import Right from 'material-ui/svg-icons/Hardware/keyboard-arrow-right'
 import {List, ListItem} from 'material-ui/List';
-import s from './MyAcceptedSkillCard.scss'
+import s from './MyAcceptedRewardCard.scss'
 
-class AcceptedCard extends Component {
+class MyAcceptedRewardCard extends Component {
     render(){
         return(
             <div>
                 <Paper>
                     <ListItem
-                        primaryText="购买者: user1"
+                        primaryText="接单人: user1"
                         rightIcon={<Right />}
                     />
                     <div className={s.content}>
@@ -40,4 +40,4 @@ class AcceptedCard extends Component {
     }
 }
 
-export default AcceptedCard;
+export default MyAcceptedRewardCard;

@@ -9,14 +9,14 @@ import CommentIcon from 'material-ui/svg-icons/Communication/comment';
 import LikeIcon from 'material-ui/svg-icons/Action/favorite-border';
 
 
-import s from './Market&RewardCard.scss'
+import s from './MarketRewardCard.scss'
 const tempStyle = {
   margin: '16px'
 };
 
 
 
-class MarketCard extends Component {
+class MarketRewardCard extends Component {
     render(){
         return(
             <div>
@@ -48,4 +48,4 @@ class MarketCard extends Component {
     }
 }
 
-export default MarketCard;
+export default MarketRewardCard;

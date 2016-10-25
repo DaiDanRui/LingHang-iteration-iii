@@ -6,12 +6,12 @@ import MuiThemeProvider from '../../../../node_modules/material-ui/styles/MuiThe
 
 import Navigation from '../../components/Navigation/Navigation'
 import PublicChoiceBar from '../../components/PublicChoiceBar/PublicChoiceBar'
-import MarketCard from '../../components/Market&RewardCard/Market&RewardCard'
+import MarketCard from '../../components/MarketRewardCard/MarketRewardCard'
 import FilterBar from '../../components/FilterBar/FilterBar'
 
 import s from './Market.scss'
 
-class Login extends Component{
+class Market extends Component{
 
     render(){
         return(
@@ -27,4 +27,4 @@ class Login extends Component{
     }
 }
 
-export default Login
+export default Market
