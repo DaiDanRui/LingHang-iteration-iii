@@ -15,6 +15,8 @@ import MyPublic from './pages/MyPublic/MyPublic'
 import MyAccepted from './pages/MyAccepted/MyAccepted'
 import MyStars from './pages/MyStars/MyStars'
 import MyComments from './pages/MyComments/MyComments'
+import MyAccount from './pages/MyAccount/MyAccount'
+import MySetting from './pages/MySetting/MySetting'
 
 import {LikeButton} from './tests/Test'
 
@@ -34,5 +36,7 @@ render((
         <Route path="/my_accept" components={MyAccepted} />
         <Route path="/my_stars" components={MyStars} />
         <Route path="/my_comments" components={MyComments} />
+        <Route path="/my_account" components={MyAccount} />
+        <Route path="my_setting" components={MySetting} />
     </Router>
 ), document.getElementById('root'));

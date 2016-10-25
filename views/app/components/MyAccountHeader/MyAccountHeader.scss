@@ -1,0 +1,17 @@
+@import '../../vars';
+
+.header {
+  height: 180px;
+  background-color: $blue-light;
+  display: flex;
+  flex-direction: row;
+}
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+}
