@@ -17,7 +17,10 @@ import MyStars from './pages/MyStars/MyStars'
 import MyComments from './pages/MyComments/MyComments'
 import MyAccount from './pages/MyAccount/MyAccount'
 import MySetting from './pages/MySetting/MySetting'
-
+import AccountSetting from './pages/AccountSetting/AccountSetting'
+import ModifyPassword from './pages/ModifyPassword/ModifyPassword'
+import PersonalInfo from './pages/PersonalInfo/PersonalInfo'
+import PersonalInfoSet from './pages/PersonalInfoSet/PersonalInfoSet'
 import {LikeButton} from './tests/Test'
 
 import s from './main.scss'
@@ -37,6 +40,10 @@ render((
         <Route path="/my_stars" components={MyStars} />
         <Route path="/my_comments" components={MyComments} />
         <Route path="/my_account" components={MyAccount} />
-        <Route path="my_setting" components={MySetting} />
+        <Route path="/my_setting" components={MySetting} />
+        <Route path="/account_setting" components={AccountSetting} />
+        <Route path="/modify_password" components={ModifyPassword} />
+        <Route path="/personal_info" components={PersonalInfo} />
+        <Route path="/personal_info_set" components={PersonalInfoSet} />
     </Router>
 ), document.getElementById('root'));

@@ -29,8 +29,7 @@ class FilterBar extends Component{
         this.state = {
             typeOpen: false,
             timeOpen: false,
-            priceOpen: false,
-            selectedIndex: 0
+            priceOpen: false
         };
         this.handleClose = this.handleClose.bind(this);
         this.handleTypeToggle = this.handleTypeToggle.bind(this);
@@ -60,7 +59,7 @@ class FilterBar extends Component{
         return(
             <div>
                 <Paper zDepth={1}>
-                    <BottomNavigation selectedIndex={this.state.selectedIndex}>
+                    <BottomNavigation>
                         <BottomNavigationItem
                             icon={typesIcon}
                             onTouchTap={this.handleTypeToggle}
