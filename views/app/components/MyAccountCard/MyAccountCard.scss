@@ -1,4 +1,28 @@
+@import "../../vars";
+.card {
+  margin-top: 10px;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  p {
+    margin: 0;
+  }
+}
+.card {
+  padding:14px 14px;
+}
+.time {
+  color: $gray;
+  margin: 0;
+}
+.from {
+  font-size: 16px;
+  color: $gray;
+}
+.income {
+  font-size: 16px;
+  color: $red;
 }

@@ -1,4 +1,15 @@
+@import "../../vars.scss";
 .comment {
   display: flex;
   flex-direction: row;
+  padding-left: 8px;
+  p {
+    margin:0;
+    width: 50%;
+  }
+}
+
+.link {
+  color: $font-color;
+  text-decoration: none;
 }

@@ -15,6 +15,7 @@ class AccountSetting extends Component{
                 <div>
                     <TitleBar
                         title="账户设置"
+                        href="/my_setting"
                     />
                     <AccountSettingCard/>
                 </div>

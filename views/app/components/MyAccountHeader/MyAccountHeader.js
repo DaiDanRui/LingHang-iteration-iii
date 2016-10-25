@@ -14,6 +14,8 @@ class MyAccountHeader extends Component{
 
     render(){
         let name = this.props.username;
+        let income = this.props.income;
+        let outcome = this.props.outcome;
         return(
             <div className={s.header}>
                 <div className={s.avatar}>
@@ -24,8 +26,8 @@ class MyAccountHeader extends Component{
                 </div>
 
                 <div className={s.detail}>
-                    <p>总收入: $70</p>
-                    <p>总支出: $0</p>
+                    <p>总收入: {income}</p>
+                    <p>总支出: {outcome}</p>
                 </div>
             </div>
         );

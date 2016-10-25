@@ -7,6 +7,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
+import { Router, Route, Link } from 'react-router';
 
 import FlatButton from 'material-ui/FlatButton';
 
@@ -36,8 +37,10 @@ class LoginCard extends Component{
                     style={buttonStyle}
                     primary={true}
                     fullWidth={true} />
-                <RaisedButton label="SIGN UP" style={buttonStyle} fullWidth={true} />
-                <p>忘记密码?</p>
+                <RaisedButton label="SIGN UP" href="/register" style={buttonStyle} fullWidth={true} />
+                <div className={s.forget}>
+                    <Link className={s.link} to="/forget_password">忘记密码? -></Link>
+                </div>
             </Paper>
         );
     }

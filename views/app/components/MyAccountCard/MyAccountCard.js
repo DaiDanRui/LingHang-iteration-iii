@@ -30,12 +30,12 @@ class MyAccountCard extends Component {
 
         return(
             <div>
-                <Paper>
-                    <p>2016-01-01</p>
+                <Paper className={s.card}>
+                    <p className={s.time}>2016-01-01</p>
                     <p>{typeName}: {title}</p>
                     <div className={s.footer}>
-                        <p>from {from}</p>
-                        <p>{inout}: ${price}</p>
+                        <p className={s.from}>from {from}</p>
+                        <p className={s.income}>{inout}: {price}</p>
                     </div>
                 </Paper>
             </div>

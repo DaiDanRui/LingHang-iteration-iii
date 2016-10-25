@@ -36,7 +36,7 @@ render((
         <Route path="/skill_info" components={SkillInfo} />
         <Route path="/buy_skill" components={BuySkill} />
         <Route path="/my_public" components={MyPublic} />
-        <Route path="/my_accept" components={MyAccepted} />
+        <Route path="/my_accepted" components={MyAccepted} />
         <Route path="/my_stars" components={MyStars} />
         <Route path="/my_comments" components={MyComments} />
         <Route path="/my_account" components={MyAccount} />

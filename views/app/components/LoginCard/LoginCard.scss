@@ -5,11 +5,21 @@
 
 .card {
   display: flex;
-  width: 360px;
+  width: 340px;
   flex-direction: column;
   padding: 24px 14px 24px 14px;
-  margin-top: 40px;
+  margin-top: 40%;
 }
 .cardTitle {
   margin: 0 0 14px 0;
+}
+.link {
+  color: $gray;
+  font-size: 14px;
+  text-decoration: none;
+}
+.forget {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
 }

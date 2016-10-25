@@ -16,6 +16,7 @@ class PersonalInfoSet extends Component{
                 <div>
                     <TitleBar
                         title="修改个人信息"
+                        href="/my_setting"
                     />
                     <PersonalInfoHeader
                         avatar={require("../../icons/avatar1.png")}
@@ -28,7 +29,7 @@ class PersonalInfoSet extends Component{
                         mobile="12345678901"
                         email="543625@54.com"
                         birth="1996-01-01"
-                        habit="爱好。。。"
+                        hobby="爱好。。。"
                         good_at="哈哈哈"
                     />
                 </div>

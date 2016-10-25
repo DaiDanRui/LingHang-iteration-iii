@@ -15,6 +15,7 @@ class ModifyPassword extends Component{
                 <div>
                     <TitleBar
                         title="修改密码"
+                        href="/account_setting"
                     />
                     <ModifyPasswordCard/>
                 </div>

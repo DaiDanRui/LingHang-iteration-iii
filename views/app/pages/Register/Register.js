@@ -14,8 +14,8 @@ class Register extends Component{
     render(){
         return(
             <MuiThemeProvider>
-                <div>
-                    <div className={s.container}>
+                <div className={s.container}>
+                    <div>
                         <RegisterCard/>
                     </div>
                 </div>

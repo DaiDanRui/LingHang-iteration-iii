@@ -15,8 +15,8 @@ class Login extends Component{
     render(){
         return(
             <MuiThemeProvider>
-                <div>
-                    <div className={s.container}>
+                <div className={s.container}>
+                    <div>
                         <LoginCard/>
                     </div>
                 </div>

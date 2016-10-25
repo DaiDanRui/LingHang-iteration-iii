@@ -15,6 +15,7 @@ class MySetting extends Component{
                 <div>
                     <TitleBar
                         title="设置"
+                        href="/my"
                     />
                     <MySettingCard/>
                 </div>

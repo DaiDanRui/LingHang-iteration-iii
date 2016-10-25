@@ -9,16 +9,19 @@ import s from './MyHeader.scss'
 
 
 class Header extends Component{
-
+    constructor(props){
+        super(props);
+    }
 
     render(){
+        let avatar = this.props.avatar;
         return(
             <div className={s.header}>
                 <div className={s.avatar}>
                     <Avatar
                         size={80}
-                        src={require("../../icons/avatar1.png")}/>
-                    <p>详情 >></p>
+                        src={avatar}/>
+                    <p>详情 ></p>
                 </div>
             </div>
         );

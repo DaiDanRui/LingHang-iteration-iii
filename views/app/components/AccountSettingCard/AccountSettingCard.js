@@ -9,14 +9,21 @@ import Divider from 'material-ui/Divider';
 
 import s from './AccountSettingCard.scss'
 
+const itemStyle = {
+    paddingLeft:'8px'
+};
+
+
 class AccountSettingCard extends Component{
     render(){
         return(
             <div>
                 <List>
                     <ListItem
+                        style={itemStyle}
                         primaryText="修改密码"
                         rightIcon={<Right />}
+                        href="modify_password"
                     />
                     <Divider/>
                 </List>
