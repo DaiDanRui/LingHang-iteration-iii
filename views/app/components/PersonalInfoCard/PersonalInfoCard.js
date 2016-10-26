@@ -24,11 +24,12 @@ class PersonalInfoCard extends Component{
         let good_at = this.props.good_at;
 
         return(
-            <div>
+            <div className={s.content}>
                 <div className={s.comment}>
                     <p>买家好评: 0%</p>
                     <p>卖家好评: 0%</p>
                 </div>
+                <Divider/>
                 <p>昵称: {nickName}</p>
                 <Divider/>
                 <p>姓名: {name}</p>

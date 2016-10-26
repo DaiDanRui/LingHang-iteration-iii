@@ -16,21 +16,25 @@ class PersonalInfo extends Component{
                 <div>
                     <TitleBar
                         title="个人信息"
+                        href="/my_accepted"
                     />
-                    <PersonalInfoHeader
-                        avatar={require("../../icons/avatar1.png")}
-                        username="user1"
-                    />
-                    <PersonalInfoCard
-                        nickName="cr"
-                        name="陈睿"
-                        gender="男"
-                        mobile="12345678901"
-                        email="543625@54.com"
-                        birth="1996-01-01"
-                        habit="爱好。。。"
-                        good_at="哈哈哈"
-                    />
+                    <div className={s.content}>
+                        <PersonalInfoHeader
+                            avatar={require("../../icons/avatar1.png")}
+                            username="user1"
+                        />
+                        <PersonalInfoCard
+                            nickName="cr"
+                            name="陈睿"
+                            gender="男"
+                            mobile="12345678901"
+                            email="543625@54.com"
+                            birth="1996-01-01"
+                            habit="爱好。。。"
+                            good_at="哈哈哈"
+                        />
+
+                    </div>
                 </div>
 
             </MuiThemeProvider>

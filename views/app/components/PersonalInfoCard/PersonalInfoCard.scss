@@ -1,4 +1,9 @@
+.content {
+  padding: 14px 24px;
+}
+
 .comment {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }

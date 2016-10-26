@@ -10,36 +10,71 @@ import LikeIcon from 'material-ui/svg-icons/Action/favorite-border';
 
 
 import s from './MarketRewardCard.scss'
-const tempStyle = {
-  margin: '16px'
+
+const iconStyle = {
+    color:"#868686",
+    height:'20px',
+    width:'20px'
 };
 
-
-
 class MarketRewardCard extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render(){
+        let avatar = this.props.avatar;
+        let title = this.props.title;
+        let price = this.props.price;
+        let pic1 = this.props.picOne;
+        let pic2 = this.props.picTwo;
+        let pic3 = this.props.picThree;
+        let author = this.props.author;
+        let days = this.props.days;
+        let comments = this.props.comments;
+        let stars = this.props.stars;
+        let type = this.props.type;
+        let currentType = this.props.currentType;
+
+        if (type != currentType)
+            return null;
+
         return(
             <div>
-                <Paper style={tempStyle}>
+                <Paper className={s.card}>
                     <div className={s.header}>
-                        <Avatar src={require("../../icons/avatar1.png")} />
-                        <p>title......</p>
-                        <p>$ 70</p>
+                        <div className={s.hin}>
+                            <Avatar
+                                size={34}
+                                src={avatar} />
+                            <p>{title}</p>
+                        </div>
+                        <p className={s.price}>¥ {price}</p>
                     </div>
                     <Divider/>
-                    <div>
-                        <img className={s.pic} src={require('../../icons/avatar1.png')} />
-                        <img className={s.pic} src={require('../../icons/avatar1.png')} />
-                        <img className={s.pic} src={require('../../icons/avatar1.png')} />
+                    <div className={s.pics}>
+                        <img className={s.pic} src={pic1} />
+                        <img className={s.pic} src={pic2} />
+                        <img className={s.pic} src={pic3} />
                     </div>
                     <Divider/>
                     <div className={s.footer}>
-                        <p>chendanni</p>
-                        <p>(3 天前)</p>
-                        <CommentIcon />
-                        <p>3</p>
-                        <LikeIcon />
-                        <p>2</p>
+                        <div className={s.days}>
+                            <p>{author}</p>
+                            <p>({days} 天前)</p>
+                        </div>
+
+                        <div className={s.info}>
+                            <CommentIcon
+                                style={iconStyle}
+                            />
+                            <p>{comments}</p>
+                            <LikeIcon
+                                style={iconStyle}
+                            />
+                            <p>{stars}</p>
+                        </div>
+
 
                     </div>
                 </Paper>

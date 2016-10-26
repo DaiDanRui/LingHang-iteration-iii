@@ -1,8 +1,9 @@
 @import "../../vars";
 .card {
   margin-top: 10px;
-  padding:14px;
+  padding:14px 14px 14px 14px;
 }
+
 .title {
   display: flex;
   flex-direction: row;
@@ -14,21 +15,26 @@
   }
 }
 
+.content {
+  display: flex;
+  flex-direction: row;
+}
 .price {
   color: $red;
 }
 
-.pics {
+.info {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .pic {
   height: 100px;
   width: 100px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-right: 10px;
 }
 
 .footer {
@@ -42,10 +48,7 @@
     color: $gray;
   }
 }
-.info {
+.action {
   display: flex;
   flex-direction: row;
-  p {
-    margin-right: 8px;
-  }
 }

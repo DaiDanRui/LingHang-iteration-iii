@@ -18,10 +18,13 @@ class MarketPublic extends Component{
                         title="我的"
                         href="/market"
                     />
-                    <MyHeader
-                        avatar={require("../../icons/avatar1.png")}
-                    />
-                    <MyChoiceList/>
+                    <div className={s.content}>
+                        <MyHeader
+                            avatar={require("../../icons/avatar1.png")}
+                        />
+                        <MyChoiceList/>
+                    </div>
+
                 </div>
             </MuiThemeProvider>
         );

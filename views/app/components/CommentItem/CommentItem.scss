@@ -1,4 +1,9 @@
 .item {
   display: flex;
   flex-direction: row;
+  margin-bottom: 8px;
+  p {
+    margin: 0;
+    padding-right: 10px;
+  }
 }

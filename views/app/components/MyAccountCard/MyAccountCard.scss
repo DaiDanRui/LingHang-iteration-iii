@@ -1,6 +1,7 @@
 @import "../../vars";
 .card {
   margin-top: 10px;
+  padding:14px 14px;
 }
 
 .footer {
@@ -11,9 +12,7 @@
     margin: 0;
   }
 }
-.card {
-  padding:14px 14px;
-}
+
 .time {
   color: $gray;
   margin: 0;

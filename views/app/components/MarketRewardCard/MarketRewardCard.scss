@@ -1,21 +1,61 @@
+@import '../../vars';
+.card {
+  margin-top: 10px;
+  padding:14px 14px;
+}
+
 .header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.hin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   p {
-    display: inline;
+    margin: auto 10px;
   }
 }
+.price {
+  color: $red;
+  margin: auto 0px;
+}
+.pics{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .pic {
-  height: 100px;
   width: 100px;
-  margin-right: 8px;
+  height: 100px;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 .footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
   p {
-    display: inline;
+    font-size: 14px;
+    color: $gray;
+    margin: auto 0;
+  }
+}
+.days {
+  display: flex;
+  flex-direction: row;
+  p {
+    margin-right: 4px;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  p {
+    margin-left: 4px;
   }
 }

@@ -12,30 +12,67 @@ import EditorIcon from 'material-ui/svg-icons/Content/create';
 
 import s from './MyPublicCard.scss'
 
+const iconStyle = {
+    color:"#868686",
+    height:'20px',
+    width:'20px'
+};
+
 class MyPublicCard extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render(){
+        let type = this.props.type;
+        let currentType = this.props.currentType;
+        let title = this.props.title;
+        let price = this.props.price;
+        let pic1 = this.props.picOne;
+        let pic2 = this.props.picTwo;
+        let pic3 = this.props.picThree;
+        let days = this.props.days;
+        let comments = this.props.comments;
+        let stars = this.props.stars;
+
+
+        if (type != currentType){
+            return null;
+        }
+
+
         return(
             <div>
-                <Paper>
-                    <div className={s.header}>
-                        <p>skill/reward name</p>
-                        <p>$2</p>
+                <Paper className={s.card}>
+                    <div className={s.title}>
+                        <p>{title}</p>
+                        <p className={s.price}>¥ {price}</p>
                     </div>
-                    <div>
-                        <img className={s.pic} src={require('../../icons/avatar1.png')} />
-                        <img className={s.pic} src={require('../../icons/avatar1.png')} />
-                        <img className={s.pic} src={require('../../icons/avatar1.png')} />
+                    <div className={s.pics}>
+                        <img className={s.pic} src={pic1} />
+                        <img className={s.pic} src={pic2} />
+                        <img className={s.pic} src={pic3} />
                     </div>
                     <div className={s.footer}>
-                        <p>剩余 3 天</p>
-                        <CommentIcon />
-                        <p>3</p>
-                        <LikeIcon />
-                        <p>2</p>
-                        <DeleteIcon />
-                        <p>删除</p>
-                        <EditorIcon />
-                        <p>编辑</p>
+                        <p>剩余 {days} 天</p>
+                        <div className={s.info}>
+                            <CommentIcon
+                                style={iconStyle}
+                            />
+                            <p>{comments}</p>
+                            <LikeIcon
+                                style={iconStyle}
+                            />
+                            <p>{stars}</p>
+                            <DeleteIcon
+                                style={iconStyle}
+                            />
+                            <p>删除</p>
+                            <EditorIcon
+                                style={iconStyle}
+                            />
+                            <p>编辑</p>
+                        </div>
                     </div>
                 </Paper>
             </div>

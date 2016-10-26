@@ -3,12 +3,9 @@
  */
 import React, { Component, PropTypes } from 'react';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
-import TextField from 'material-ui/TextField';
-import ContentAdd from 'material-ui/svg-icons/Content/add';
+import CommentCard from '../../components/CommentCard/CommentCard'
 import { Router, Route, Link } from 'react-router';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import SwipeableViews from 'react-swipeable-views';
 import s from './CommentChoiceBar.scss';
 
 const style = {
@@ -38,20 +35,9 @@ class CommentChoiceBar extends Component{
                     value={this.state.value}
                     onChange={this.handleChange}
                 >
-                    <Tab label="我是老师" value="teacher" >
-                        <div>
-                            <p>
-                                teacher
-                            </p>
-                        </div>
-                    </Tab>
-                    <Tab label="我是学生" value="student">
-                        <div>
-                            <p>
-                                student
-                            </p>
-                        </div>
-                    </Tab>
+                    <Tab label="我是老师" value="teacher" />
+
+                    <Tab label="我是学生" value="student" />
                 </Tabs>
 
             </div>
