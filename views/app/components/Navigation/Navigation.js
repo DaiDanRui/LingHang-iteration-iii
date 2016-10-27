@@ -8,26 +8,45 @@ import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui
 import TextField from 'material-ui/TextField';
 import ActionSearch from 'material-ui/svg-icons/action/search';
 import { Router, Route, Link } from 'react-router';
+import FilterBar from '../../components/FilterBar/FilterBar'
 import s from './Navigation.scss';
+
+const iconStyle = {
+    height:'36px',
+    width:'36px',
+};
+const buttonStyle = {
+    height:'36px',
+    width:'36px',
+    margin: 'auto 8px',
+    padding:'0'
+};
 
 class Navigation extends Component{
 
     render(){
         return(
-            <Toolbar className={s.nav}>
-                <ToolbarGroup firstChild = {true}>
-                    <IconButton>
-                        <ActionHome />
+            <div>
+                <Toolbar className={s.nav}>
+                    <IconButton
+                        iconStyle={iconStyle}
+                        style={buttonStyle}
+                        href="/my">
+                        <ActionHome color='#FFFFFF'/>
                     </IconButton>
                     <TextField
+                        fullWidth={true}
                         hintText="find something you like..."
                     />
-                    <IconButton>
-                        <ActionSearch />
+                    <IconButton
+                        iconStyle={iconStyle}
+                        style={buttonStyle}
+                    >
+                        <ActionSearch color='#FFFFFF'/>
                     </IconButton>
-
-                </ToolbarGroup>
-            </Toolbar>
+                </Toolbar>
+                <FilterBar/>
+            </div>
 
         );
     }

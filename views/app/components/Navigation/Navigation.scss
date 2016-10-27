@@ -1,17 +1,16 @@
 @import '../../vars.scss';
 
+.position {
+  position: fixed;
+  top:0;
+  width:100%;
+}
+
 .nav {
-}
-
-.link {
-  display: inline;
-  text-decoration: none;
-  padding: 20px 0 0 0;
-  color: $white;
-  margin:0 14px;
-}
-
-.linkGroup {
+  background-color: $blue-light !important;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 !important;
+  height: auto !important;
 }

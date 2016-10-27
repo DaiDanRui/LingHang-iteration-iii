@@ -41,7 +41,8 @@ class MarketRewardCard extends Component {
 
         return(
             <div>
-                <Paper className={s.card}>
+                <Paper
+                    className={s.card}>
                     <div className={s.header}>
                         <div className={s.hin}>
                             <Avatar

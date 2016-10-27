@@ -23,6 +23,7 @@ class MyStars extends Component{
             value: value,
         });
     };
+
     render(){
 
         return(

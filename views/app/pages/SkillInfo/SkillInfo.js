@@ -4,6 +4,7 @@
 import React, { Component, PropTypes } from 'react';
 import MuiThemeProvider from '../../../../node_modules/material-ui/styles/MuiThemeProvider'
 import SkillInfoCard from '../../components/SkillInfoCard/SkillInfoCard'
+import TitleBar from '../../components/TitleBar/TitleBar'
 import s from './SkillInfo.scss'
 
 class SkillInfo extends Component{
@@ -12,6 +13,10 @@ class SkillInfo extends Component{
         return(
             <MuiThemeProvider>
                 <div>
+                    <TitleBar
+                        title="技能详情"
+                        href="/market"
+                    />
                     <SkillInfoCard/>
                 </div>
 

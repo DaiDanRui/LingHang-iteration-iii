@@ -13,6 +13,9 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 import s from './MarketPublicCard.scss'
 
+const buttonStyle = {
+    marginTop:'16px'
+};
 
 class MarketPublicCard extends Component{
     render(){
@@ -29,6 +32,7 @@ class MarketPublicCard extends Component{
                     rows={4}
                 /><br />
                 <DatePicker
+                    fullWidth={true}
                     hintText="截止日期"
                     container="inline" />
                 <TextField
@@ -43,8 +47,20 @@ class MarketPublicCard extends Component{
                     hintText="联系方式"
                     fullWidth={true}
                 /><br/>
-                <Divider/>
-                <RaisedButton label="确认" primary={true} fullWidth={true} />
+                <RadioButtonGroup
+                    name="shipSpeed" defaultSelected="not_light">
+                    <RadioButton
+                        value="技能"
+                        label="技能"
+                    />
+                    <RadioButton
+                        value="悬赏"
+                        label="悬赏"
+                    />
+                </RadioButtonGroup>
+                <RaisedButton
+                    style={buttonStyle}
+                    label="确认" primary={true} fullWidth={true} />
             </div>
         );
     }

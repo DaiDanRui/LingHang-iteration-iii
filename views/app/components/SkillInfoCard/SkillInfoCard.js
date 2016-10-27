@@ -17,7 +17,7 @@ import s from './SkillInfoCard.scss'
 class SkillInfoCard extends Component{
     render(){
         return(
-            <card>
+            <div className={s.card}>
                 <CardHeader
                     title="c++入门"
                     subtitle="from chenrui"
@@ -73,7 +73,7 @@ class SkillInfoCard extends Component{
                     <FlatButton label="我要买" primary={true} />
                 </Toolbar>
 
-            </card>
+            </div>
         );
     }
 }

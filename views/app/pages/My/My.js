@@ -18,7 +18,7 @@ class MarketPublic extends Component{
                         title="我的"
                         href="/market"
                     />
-                    <div className={s.content}>
+                    <div>
                         <MyHeader
                             avatar={require("../../icons/avatar1.png")}
                         />
