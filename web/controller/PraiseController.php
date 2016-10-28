@@ -1,0 +1,54 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: darxan
+ * Date: 2016/10/13
+ * Time: 10:30
+ */
+
+namespace web\controller;
+
+
+use core\Controller;
+use core\Request;
+use web\model\PraiseModel;
+
+class PraiseController extends Controller
+{
+
+
+    public function postPraise(Request $request)
+    {
+        $parameters = $request->validate(
+            [
+                'id'=>['integer'],
+                'commodity_id'=>['integer'],
+                'eulogist_id'=>['set_value:'.$this->auth->currentUser()],
+            ]
+        );
+        $this->model->save($parameters);
+    }
+
+    public function getPraised(Request $request)
+    {
+        $parameters = $request->validate(
+            [
+                'eulogist_id'=>['set_value:'.$this->auth->currentUser()],
+                'type'=>['enum:reward|skill|all'],
+            ]
+        );
+        $this->model->exist(array_keys($parameters),array_values($parameters));
+    }
+
+    public function isPraised(Request $request)
+    {
+        $parameters = $request->validate(
+            [
+                'id'=>['integer'],
+                'commodity_id'=>['integer'],
+                'eulogist_id'=>['set_value:'.$this->auth->currentUser()],
+            ]
+        );
+        $this->model->exist(array_keys($parameters),array_values($parameters));
+    }
+}
