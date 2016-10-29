@@ -16,6 +16,7 @@ class Auth
     public function login($data,$parameters)
     {
 
+        $_SESSION[CURRENT_LOGIN_VERIFIED] = false;
         if(isset($data[0]))
         {
             if(($data[0]['password']===$parameters['password']))
@@ -57,6 +58,11 @@ class Auth
     {
         return 1;
         return $_SESSION[CURRENT_LOGIN_ID];
+    }
+    public function currentUserName()
+    {
+        return 1;
+        return $_SESSION[CURRENT_LOGIN_NAME];
     }
     public function currentUserPhone()
     {

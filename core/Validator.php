@@ -37,6 +37,7 @@ class Validator
             $view_key = isset($this->model_to_view[$key])?$this->model_to_view[$key]:$key;
             $value = $data->offsetGet($view_key);
             $result = $this->validateValue($rule,$value);
+
             if($result===false){
                 $this->failed[] = $key;
             }else{

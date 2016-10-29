@@ -51,4 +51,9 @@ class Request extends MyArray
         }
     }
 
+    public function getFailedKeys()
+    {
+        return $this->validator->getFailedKeys();
+    }
+
 }

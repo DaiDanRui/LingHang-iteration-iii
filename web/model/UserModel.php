@@ -17,6 +17,6 @@ class UserModel extends Model
     protected $table = 'users';
 
     protected $model_to_view = [
-//        'name'=>'username',
+        'name'=>'username',
     ];
 }

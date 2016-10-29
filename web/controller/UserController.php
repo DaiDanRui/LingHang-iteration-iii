@@ -16,9 +16,6 @@ use core\Request;
 class UserController extends Controller
 {
 
-
-
-
     public function getRegister()
     {
         $this->header(REGISTER_PAGE);
@@ -34,7 +31,8 @@ class UserController extends Controller
             'avatar'=>['set_value:'.DEFAULT_AVATAR],
 //            'confirm_code'=>['session:=|confirm_code'],
         ]);
-        $this->showResult( $this->model->save($parameters,true)===false? 'fail':'success');
+        $user_id = $this->model->save($parameters,true);
+        $this->show($user_id===false?false:true, $user_id);
     }
 
     public function sendConfirmCode(Request $request)
@@ -80,17 +78,58 @@ class UserController extends Controller
                 'password'=>[]
             ]
         );
-        $data =$this->model->find('name',$parameters['name']);
+        $data =$this->model->find_by_assoc($parameters);
         $loginResult = $this->auth->login($data,$parameters);
-        $this->show([
-            'result'=>$loginResult===true?'success':'fail',
-            'field'=>$loginResult,
-        ]);
+
+        if($loginResult===true)
+        {
+            $this->show(true);
+        }else
+        {
+            $this->show(false,$loginResult);
+        }
     }
 
     public function postLogout()
     {
         $this->showResult( $this->auth->logout() );
+    }
+
+    public function change(Request $request)
+    {
+        $parameters = $request->validate(
+            [
+                'new'=>[],
+                'old'=>[],
+            ]
+        );
+        $data =$this->model->find('id',$this->auth->currentUser());
+        $loginResult = null;
+        if(!$data)
+        {
+            $loginResult = 'name';
+        }else
+        {
+            if($parameters['old']=$data[0]['password'])
+            {
+                $update = $this->model->update_by_assoc(
+                    ['password'=>$parameters['password']],
+                    ['id'=>$this->auth->currentUser()]
+                );
+                $loginResult = $update?true:false;
+            }
+            else
+            {
+                $loginResult = 'old';
+            }
+        }
+        if($loginResult===true)
+        {
+            $this->show(true);
+        }else
+        {
+            $this->show(false,$loginResult);
+        }
     }
 
 }

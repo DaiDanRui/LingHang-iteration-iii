@@ -38,15 +38,17 @@ class CommodityController extends Controller
         convertCommoditiesForHtml('pic_paths',$commodities);
         if($commodities)
         {
-            $this->show([
-                'result'=>'success',
-                'commodities'=>$commodities,
-                'bound'=>end($commodities)['id'],
-                'parameters'=>$parameters,
-            ]);
+            $this->show(
+                true,
+                [
+                    'commodities'=>$commodities,
+                    'bound'=>end($commodities)['id'],
+                    'parameters'=>$parameters,
+                ]
+            );
         }else
         {
-            $this->showResult('false');
+            $this->show(false);
         }
     }
 

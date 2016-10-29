@@ -21,6 +21,7 @@ class Controller
      */
     protected $auth ;
 
+    protected $mapper;
     /**
      * @param $auth
      */
@@ -36,24 +37,19 @@ class Controller
         $this->model = $model;
     }
 
-    protected function show($content){
-        echo json_encode(
-            [
-                'result'=>'success',
-                'main'=>convertAllForHtml($content),
-                'auth'=>convertAllForHtml($this->auth->currentUserInfo()),
-            ]
-        );
-        Model::delete();
-        exit(0);
+    public function setMapper($mapper)
+    {
+        $this->mapper = $mapper;
     }
-    protected function showResult($result){
-        echo json_encode(
-            [
-                'result'=>$result,
-                'auth'=>convertAllForHtml($this->auth->currentUserInfo()),
-            ]
-        );
+
+    protected function show($result=true,$content=null){
+
+        $response = [
+            'result'=>$result===true||$result==='success'?'success':'failed',
+            'auth'=>$this->convertAllForHtml($this->auth->currentUserInfo()),
+            'main'=>$this->convertAllForHtml($content),
+        ];
+        echo json_encode($response);
         Model::delete();
         exit(0);
     }
@@ -77,4 +73,19 @@ class Controller
     }
 
 
+    protected function convertAllForHtml(&$variables)
+    {
+        if(is_array($variables))
+        {
+            foreach ($variables as $key=>$variable)
+            {
+                if (isset($this->mapper[$key]))
+                {
+                    $variables[$this->mapper[$key]] = $variable;
+                    unset($variables[$key]);
+                }
+            }
+        }
+        return $variables;
+    }
 }

@@ -22,14 +22,11 @@ class Model
     {
         return $this->model_to_view;
     }
-    /**
-     * @var \ArrayAccess
-     */
-    protected $view_to_model;
-    public function getViewToModel()
+    public function setModelToView($mapper)
     {
-        return $this->view_to_model;
+        return $this->model_to_view = $mapper;
     }
+
     /**
      * @var PDO
      */
@@ -122,7 +119,7 @@ class Model
 
     public function find_by_assoc($array,$table=null)
     {
-        $field = join(' =? AND', array_keys($array));
+        $field = join(' =? AND ', array_keys($array));
         $table = $table?:$this->getTableName();
         $sql = "SELECT * FROM $table WHERE $field  =? ";
         $pdoStatement = Model::getPDO()->prepare($sql);
@@ -186,7 +183,6 @@ class Model
         $sql .= $order;
 
         $sql .= " LIMIT $start,$count";
-        echo ($sql);
         $queryResult = Model::getPDO()->query($sql);
         return $queryResult->fetchAll();
     }

@@ -28,7 +28,7 @@ class App
 
     protected static $auth;
 
-   
+    protected static $mapper;
 
     /**
      * 项目的入口方法
@@ -63,6 +63,7 @@ class App
 
         $controller = new $controllerClass();
         $model = class_exists($modelClass)?new $modelClass():new Model();
+        $model->setModelToView(self::$mapper);
 
 
 
@@ -79,6 +80,8 @@ class App
         self::$request_url = $_SERVER['REQUEST_URI'];//start with '/'
         self::$url_array = explode('/',self::$request_url);// the first element must be ""(empty)
         self::$request_method = $_SERVER['REQUEST_METHOD'];
+
+        self::$mapper = include 'config/mapper.php';
     }
 
 
