@@ -11,6 +11,7 @@ namespace core;
 
 class Controller
 {
+
     /**
      * @var Model
      */
@@ -63,5 +64,6 @@ class Controller
             exit(0);
         }
     }
+
 
 }

@@ -14,13 +14,16 @@ class Validator
     protected $failed = [];
     protected $success = [];
 
+    protected $model_to_view;
+
     /**
      * @var Model
      */
     protected $model ;
-    public function __construct($model)
+    public function __construct(Model $model)
     {
         $this->model = $model;
+        $this->model_to_view = $model->getModelToView();
     }
 
     /**
@@ -31,7 +34,8 @@ class Validator
     public function validate(Request $data, $rules){
 
         foreach ($rules as $key=>$rule){
-            $value = $data->offsetGet($key);
+            $view_key = isset($this->model_to_view[$key])?$this->model_to_view[$key]:$key;
+            $value = $data->offsetGet($view_key);
             $result = $this->validateValue($rule,$value);
             if($result===false){
                 $this->failed[] = $key;

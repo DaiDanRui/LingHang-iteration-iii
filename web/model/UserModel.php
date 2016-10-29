@@ -13,4 +13,7 @@ use core\Model;
 
 class UserModel extends Model
 {
+    protected $model_to_view = [
+        'name'=>'username',
+    ];
 }

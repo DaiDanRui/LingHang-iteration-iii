@@ -12,6 +12,24 @@ use \PDO;
 
 class Model
 {
+
+    /**
+     * @var \ArrayAccess
+     */
+    protected $model_to_view;
+
+    public function getModelToView()
+    {
+        return $this->model_to_view;
+    }
+    /**
+     * @var \ArrayAccess
+     */
+    protected $view_to_model;
+    public function getViewToModel()
+    {
+        return $this->view_to_model;
+    }
     /**
      * @var PDO
      */
@@ -39,7 +57,7 @@ class Model
             self::$pdo ->query("set character set 'utf8'");
             self::$pdo ->query("SET NAMES utf8");
         }
-        catch(PDOException $e)
+        catch(\Exception $e)
         {
             exit($e->getMessage());
         }
@@ -62,8 +80,14 @@ class Model
     }
 
 
-    public function save($values, $table=null)
+    public function save($values, $add_date=false, $table=null)
     {
+        if($add_date)
+        {
+            $time = getCurrentDateTime();
+            $values['created_at'] = $time;
+            $values['updated_at'] = $time;
+        }
         $table = $table?:$this->getTableName();
         $fields = join(',',array_keys($values));
         $values = join("','",array_values($values));

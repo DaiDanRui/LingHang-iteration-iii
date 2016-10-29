@@ -29,9 +29,9 @@ class UserController extends Controller
             'name'=>['unique:name'],
             'password'=>[''],
             'phone'=>['unique:phone'],
-            'confirm_code'=>['session:=|confirm_code'],
+//            'confirm_code'=>['session:=|confirm_code'],
         ]);
-        $this->showResult( $this->model->save($parameters)===false? 'fail':'success');
+        $this->showResult( $this->model->save($parameters,true)===false? 'fail':'success');
     }
 
     public function sendConfirmCode(Request $request)
@@ -73,7 +73,7 @@ class UserController extends Controller
     {
         $parameters = $request->validate(
             [
-                'phone'=>[],
+                'name'=>[],
                 'password'=>[]
             ]
         );
