@@ -13,6 +13,8 @@ use core\Model;
 
 class TransactionModel extends Model
 {
+    protected $table = 'transactions';
+
     public function getPersonalConfirmed($type, $publisher)
     {
         $where = " AND commodities.publisher_id='$publisher' " ;

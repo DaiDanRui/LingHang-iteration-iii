@@ -21,12 +21,12 @@ class PraiseController extends Controller
     {
         $parameters = $request->validate(
             [
-                'id'=>['integer'],
                 'commodity_id'=>['integer'],
                 'eulogist_id'=>['set_value:'.$this->auth->currentUser()],
             ]
         );
-        $this->model->save($parameters);
+        $result = $this->model->save($parameters,true);
+        $this->showResult($result?true:false);
     }
 
     public function getPraised(Request $request)

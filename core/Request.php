@@ -46,6 +46,7 @@ class Request extends MyArray
         if($this->validator->validate($this,$rules)){
             return $this->validator->getSuccessValues();
         }else{
+            dump($this->validator->getFailedKeys());
             throw new \Exception();
         }
     }

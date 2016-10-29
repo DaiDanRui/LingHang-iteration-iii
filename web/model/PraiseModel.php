@@ -14,6 +14,8 @@ use core\Model;
 class PraiseModel extends Model
 {
 
+    protected $table = 'praises';
+
     public function find_by_eulogist($type,$eulogist,$start=0,$count=PAGE_SIZE)
     {
         $sql = "SELECT commodities.*,users.name,users.phone,users.avatar,praises.created_at as praise_date"

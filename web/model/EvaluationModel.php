@@ -13,6 +13,8 @@ use core\Model;
 
 class EvaluationModel extends Model
 {
+    protected $table = 'evaluations';
+
     protected function getInfo($where = '')
     {
         $sql = 'SELECT users.avatar,users.phone,users.name,evaluations.*'

@@ -24,13 +24,11 @@ class EvaluationController extends Controller
             'evaluator_id'=>[],
             'evaluated_id'=>[],
             'transaction_id'=>[],
-            'created_at'=>[],
-            'updated_at'=>[],
             'score1'=>[],
             'score2'=>[],
             'score3'=>[],
         ]);
-        $this->model->save($parameters);
+        $this->model->save($parameters,true);
     }
 
     public function getEvaluation()

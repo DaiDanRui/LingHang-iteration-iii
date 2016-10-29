@@ -17,6 +17,8 @@ class UserController extends Controller
 {
 
 
+
+
     public function getRegister()
     {
         $this->header(REGISTER_PAGE);
@@ -26,9 +28,10 @@ class UserController extends Controller
     {
 
         $parameters = $request->validate([
-            'name'=>['unique:name'],
-            'password'=>[''],
-            'phone'=>['unique:phone'],
+            'name'=>['no_exist:name'],
+            'password'=>[],
+            'phone'=>['no_exist:phone'],
+            'avatar'=>['set_value:'.DEFAULT_AVATAR],
 //            'confirm_code'=>['session:=|confirm_code'],
         ]);
         $this->showResult( $this->model->save($parameters,true)===false? 'fail':'success');
@@ -77,7 +80,7 @@ class UserController extends Controller
                 'password'=>[]
             ]
         );
-        $data =$this->model->find('phone',$parameters['phone']);
+        $data =$this->model->find('name',$parameters['name']);
         $loginResult = $this->auth->login($data,$parameters);
         $this->show([
             'result'=>$loginResult===true?'success':'fail',

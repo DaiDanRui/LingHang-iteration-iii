@@ -123,6 +123,17 @@ class Validator
 
     }
 
+    protected function no_exist($value,$parameter)
+    {
+        $parameters = explode('|',$parameter);
+        $parameters[] = null;
+        if($this->model->count_row($parameters[0], $value, $parameters[1])==0)
+        {
+            return $value;
+        }
+        return false;
+    }
+
     protected function unique($value,$parameter){
         $parameters = explode('|',$parameter);
         $parameters[] = null;

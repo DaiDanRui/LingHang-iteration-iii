@@ -14,6 +14,8 @@ use core\Model;
 class CommodityModel extends Model
 {
 
+    protected $table = 'commodities';
+
     public function search($type, $page,$original_page, $category, $keyword, $order, $desc, $bound, $count)
     {
 

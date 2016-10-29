@@ -34,3 +34,6 @@ define('ACCESS_FREQUENCY_LIMIT',100);
 define('TRANSACTION_STARTED',0);
 define('TRANSACTION_CONFIRM',1);
 define('TRANSACTION_REFUSED',2);
+
+
+define('DEFAULT_AVATAR','/avatar.jpg');

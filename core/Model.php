@@ -169,10 +169,9 @@ class Model
     public function find($field, $value, $table=null)
     {
         $table = $table?:$this->getTableName();
-        $sql = "SELECT * FROM $table WHERE $field=? LIMIT 1";
-        $pdoStatement = Model::getPDO()->prepare($sql);
-        $pdoStatement->execute([$value]);
-        return $pdoStatement->fetchAll();
+        $sql = "SELECT * FROM $table WHERE $field='$value' LIMIT 1";
+        $queryResult = Model::getPDO()->query($sql);
+        return $queryResult->fetchAll();
     }
 
 

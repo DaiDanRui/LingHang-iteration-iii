@@ -13,4 +13,7 @@ use core\Model;
 
 class InformationModel extends Model
 {
+
+    protected $table = 'information';
+
 }

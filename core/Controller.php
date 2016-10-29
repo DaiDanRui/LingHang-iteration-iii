@@ -37,12 +37,23 @@ class Controller
     }
 
     protected function show($content){
-        echo json_encode($content);
+        echo json_encode(
+            [
+                'result'=>'success',
+                'main'=>convertAllForHtml($content),
+                'auth'=>convertAllForHtml($this->auth->currentUserInfo()),
+            ]
+        );
         Model::delete();
         exit(0);
     }
     protected function showResult($result){
-        echo json_encode(['result'=>$result]);
+        echo json_encode(
+            [
+                'result'=>$result,
+                'auth'=>convertAllForHtml($this->auth->currentUserInfo()),
+            ]
+        );
         Model::delete();
         exit(0);
     }

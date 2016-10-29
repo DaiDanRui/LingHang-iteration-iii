@@ -36,6 +36,23 @@ class Auth
             return 'phone';
         }
     }
+
+    public function currentUserInfo()
+    {
+        if(!$_SESSION[CURRENT_LOGIN_VERIFIED])
+        {
+            return ['login'=>'false'];
+        }
+        return [
+            'login'=>'true',
+            'phone'=>$_SESSION[CURRENT_LOGIN_PHONE],
+            'name'=>$_SESSION[CURRENT_LOGIN_NAME],
+            'avatar'=>$_SESSION[CURRENT_LOGIN_AVATAR],
+            'id'=>$_SESSION[CURRENT_LOGIN_ID],
+
+        ];
+    }
+
     public function currentUser()
     {
         return 1;

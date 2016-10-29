@@ -35,6 +35,7 @@ class CommodityController extends Controller
         list($type,$page,$keyword,$order, $desc,$bound,$original_page,$category)=array_values($parameters);
         $count = PAGE_SIZE;
         $commodities = $this->model->search($type,$page,$original_page,$category, $keyword,$order, $desc,$bound,$count);
+        convertCommoditiesForHtml('pic_paths',$commodities);
         if($commodities)
         {
             $this->show([
@@ -53,6 +54,7 @@ class CommodityController extends Controller
     {
         $parameters = $request->validate(['id'=>['integer']]);
         $commodity = $this->model->find_by_id(current($parameters));
+        convertCommoditiesForHtml($commodity);
         dump($commodity);
     }
 
@@ -67,12 +69,10 @@ class CommodityController extends Controller
                 'deleted_date'=>[],
                 'title'=>[],
                 'description'=>[],
-                'created_at'=>[],
-                'updated_at'=>[],
                 'category'=>[],
             ]
         );
-        $commodity_id = $this->model->save($parameters);
+        $commodity_id = $this->model->save($parameters,true);
         $file = new FileLoader();
 
         $paths = $file->loader('upload','picture');

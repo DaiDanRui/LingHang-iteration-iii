@@ -13,6 +13,9 @@ use core\Model;
 
 class BudgetModel  extends Model
 {
+
+    protected $table = 'budgets';
+
     public function getIncomeBudget($user)
     {
         $where = " WHERE users.id=budgets.payer_id AND budgets.receiver_id='$user'";

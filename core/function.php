@@ -69,3 +69,23 @@ function convertType($type)
     }
     return -1;
 }
+
+function convertCommoditiesForHtml($urlKey='pic_paths',&$tableRows){
+    foreach ($tableRows as &$row){
+        $url = &$row[$urlKey];
+        $url = explode(',',$url);
+    }
+}
+
+function convertAllForHtml(&$variables)
+{
+    $mapper = include 'config/mapper.php';
+    foreach ($variables as $key=>$variable)
+    {
+        if (isset($mapper[$key]))
+        {
+            $variables[$mapper[$key]] = $variable;
+            unset($variables[$key]);
+        }
+    }
+}
