@@ -125,6 +125,7 @@ class App
 
     protected static function matchedFunction(){
         list(self::$controller, self::$method) = self::$url_value[KEY_ROUTER];
+        self::$controller = ucfirst(self::$controller);
     }
 
 }
