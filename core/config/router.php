@@ -12,7 +12,7 @@ return [
 
     //http://127.0.0.1/login/user1/root
     //{"result":"success","auth":{"login":"true","phone":"18795855867","avatar":"\/avatar.jpg","id":"1","username":"user1"},"main":null}
-    '/login/:username/:password'=>[
+    '/login/:username/:pwd'=>[
         ['GET'], ['user','postLogin'],['access_limit']
     ],
     '/login'=>[
