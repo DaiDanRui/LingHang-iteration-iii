@@ -40,7 +40,7 @@ class Auth
 
     public function currentUserInfo()
     {
-        if(!$_SESSION[CURRENT_LOGIN_VERIFIED])
+        if(!isset($_SESSION[CURRENT_LOGIN_VERIFIED])||!$_SESSION[CURRENT_LOGIN_VERIFIED])
         {
             return ['login'=>'false'];
         }

@@ -62,7 +62,7 @@ class App
 
 
         $controller = new $controllerClass();
-        $model = class_exists($modelClass)?new $modelClass():new Model();
+        $model = new $modelClass();
         $model->setModelToView(self::$mapper);
 
 
@@ -75,13 +75,13 @@ class App
 
 
     protected static function init(){
-        self::$router = require 'config/router.php';
-        self::$router['/'] = [ ['GET','POST'],[self::$controller,self::$method] ];
+        self::$router = require APP_PATH.'core/config/router.php';
+        self::$router['/'] = [ ['GET','POST'],[self::$controller,self::$method],[] ];
         self::$request_url = $_SERVER['REQUEST_URI'];//start with '/'
         self::$url_array = explode('/',self::$request_url);// the first element must be ""(empty)
         self::$request_method = $_SERVER['REQUEST_METHOD'];
+        self::$mapper = include APP_PATH.'core/config/mapper.php';
 
-        self::$mapper = include 'config/mapper.php';
     }
 
 

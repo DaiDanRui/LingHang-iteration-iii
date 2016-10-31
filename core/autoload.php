@@ -10,5 +10,5 @@
  * @param $class
  */
 function __autoload($class) {
-    include_once($class.".php");
+    include_once( APP_PATH.str_replace("\\","/", $class).".php");
 }
