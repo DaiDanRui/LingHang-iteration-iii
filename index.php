@@ -6,6 +6,7 @@
  * Date: 2016/9/24
  * Time: 11:32
  */
+header('Access-Control-Allow-Origin:*');
 session_start();
 mb_internal_encoding('utf-8');
 // 应用目录为当前目录
