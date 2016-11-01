@@ -54,9 +54,17 @@ class CommodityController extends Controller
     {
         $parameters = $request->validate(['id'=>['integer']]);
         $commodity = $this->model->find_by_id(current($parameters));
+        $messages = $this->model->find_by_assoc($parameters, 'messages');
+
+//        $praised = $this->model->find_by_assoc($parameters, 'praises');
         if($commodity) {
             convertCommoditiesForHtml($commodity);
-            $this->show(true,$commodity[0]);
+            $this->show(true,
+                [
+                    'commodity'=>$commodity[0],
+                    'messages'=>$messages,
+                ]
+            );
         }else
         {
             $this->show(false,null);
