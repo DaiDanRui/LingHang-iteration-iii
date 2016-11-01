@@ -77,4 +77,21 @@ function convertCommoditiesForHtml($urlKey,&$tableRows){
         $url = explode(',',$url);
     }
 }
-
+/**
+ * @param $date string 'Y-m-d H:i:s'
+ * @return int 多少天前
+ */
+function getBeforeTime($date){
+    $now_time = time();
+    $time=strtotime($date);
+    return (int)( ($now_time-$time) /3600/24);
+}
+/**
+ * @param $date string 'Y-m-d H:i:s'
+ * @return int 多少天后
+ */
+function getAfterTime($date){
+    $now_time = time();
+    $time=strtotime($date);
+    return (int)( ($now_time-$time) /3600/24);
+}
