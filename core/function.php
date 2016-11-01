@@ -71,7 +71,7 @@ function convertType($type)
 }
 
 function convertCommoditiesForHtml($urlKey,&$tableRows,
-                                   $beforeTimeKey='publish-time',$after_time='deadline'
+                                   $beforeTimeKey='publish_time',$after_time='deadline'
 ){
 
     foreach ($tableRows as &$row){
