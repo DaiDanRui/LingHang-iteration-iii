@@ -78,7 +78,7 @@ class UserController extends Controller
                 'password'=>[]
             ]
         );
-        $data =$this->model->find_by_assoc($parameters);
+        $data =$this->model->find('name',$parameters['name']);
         $loginResult = $this->auth->login($data,$parameters);
 
         if($loginResult===true)

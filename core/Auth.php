@@ -34,7 +34,7 @@ class Auth
 
         }else
         {
-            return 'phone';
+            return 'name';
         }
     }
 
