@@ -42,7 +42,7 @@ class Controller
         $this->mapper = $mapper;
     }
 
-    protected function show($result,$content){
+    protected function show($result,$content=null){
 
         $response = [
             'result'=>$result===true||$result==='success'?'success':'failed',

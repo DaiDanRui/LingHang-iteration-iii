@@ -99,9 +99,25 @@ class CommodityController extends Controller
             [
                 'publisher_id'=>['set_value:'.$this->auth->currentUser()],
                 'type'=>['enum:skill|reward|all'],
+                'page'=>['integer:>|0','default_value:1'],
             ]
         );
-        $result = $this->model->find_by_publisher($parameter['publisher_id'],$parameter['type']);
-        dump($result);
+        $result = $this->model->find_by_publisher(
+            $parameter['publisher_id'],$parameter['type'],PAGE_SIZE*($parameter['page']-1)
+        );
+        $this->show(true,$result);
+    }
+
+    public function remove(Request $request)
+    {
+        $parameters = $request->validate(['id'=>['integer']]);
+        $commodity = $this->model->find_by_assoc($parameters);
+        if(isset($commodity[0]) && ($commodity[0]['state']==0))
+        {
+           $this->show( $this->model->remove_by_assoc($parameters));
+        }else
+        {
+            $this->show(false,'no auth');
+        }
     }
 }

@@ -53,8 +53,14 @@ return [
         ['GET','POST'], ['commodity','getCommodity'],['access_limit']
     ],
 
-    '/personal/commodity/:type'=>[
-        ['GET','POST'], ['commodity','getPersonal'],['access_limit']
+    '/personal/commodity/:type/:page'=>[
+        ['GET','POST'], ['commodity','getPersonal'],['check','access_limit']
+    ],
+    '/remove/:id'=>[
+        ['GET'], ['commodity','remove'],['check','access_limit']
+    ],
+    '/remove'=>[
+        ['POST'], ['commodity','remove'],['check','access_limit']
     ],
 
 

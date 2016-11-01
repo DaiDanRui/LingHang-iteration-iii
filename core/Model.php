@@ -145,6 +145,18 @@ class Model
         return $pdoStatement->fetchAll();
     }
 
+    public function remove_by_assoc($array,$table=null)
+    {
+        $field = join(' =? AND ', array_keys($array));
+        $table = $table?:$this->getTableName();
+        $sql = "DELETE FROM  $table WHERE $field  =? ";
+        $pdoStatement = Model::getPDO()->prepare($sql);
+        return $pdoStatement->execute(array_values($array));
+
+    }
+
+
+
     public function count_row($field, $value, $table)
     {
         $table = $table?:$this->getTableName();
