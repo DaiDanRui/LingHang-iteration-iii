@@ -70,11 +70,17 @@ function convertType($type)
     return -1;
 }
 
-function convertCommoditiesForHtml($urlKey,&$tableRows){
+function convertCommoditiesForHtml($urlKey,&$tableRows,
+                                   $beforeTimeKey='publish-time',$after_time='deadline'
+){
 
     foreach ($tableRows as &$row){
         $url = &$row[$urlKey];
         $url = explode(',',$url);
+        $time = $row['created_at'];
+        $row[$beforeTimeKey] = getBeforeTime($time);
+        $time = $row['deleted_date'];
+        $row[$after_time] = getAfterTime($time);
     }
 }
 /**

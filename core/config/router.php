@@ -12,7 +12,7 @@ return [
 
     //http://127.0.0.1/login/user1/root
     //{"result":"success","auth":{"login":"true","phone":"18795855867","avatar":"\/avatar.jpg","id":"1","username":"user1"},"main":null}
-    '/login/:username/:pwd'=>[
+    '/login/:name/:password'=>[
         ['GET'], ['user','postLogin'],['access_limit']
     ],
     '/login'=>[
@@ -42,7 +42,7 @@ return [
 
     /* http://127.0.0.1/search/all/1/null/id/asc/-1/0/sports */
 
-    '/search/:is-market/:page/:keyword/:order/:desc/:bound/:original_page/:type'=>[
+    '/search/:type/:page/:keyword/:order/:desc/:bound/:original_page/:category'=>[
         ['GET'],  ['commodity','search'],['access_limit']
     ],
     '/search'=>[
