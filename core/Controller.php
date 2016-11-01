@@ -46,7 +46,7 @@ class Controller
 
         $response = [
             'result'=>$result===true||$result==='success'?'success':'failed',
-            'auth'=>$this->convertAllForHtml($this->auth->currentUserInfo()),
+            'auth'=>($this->auth->currentUserInfo()),
             'main'=>($content),
         ];
         echo json_encode($response);

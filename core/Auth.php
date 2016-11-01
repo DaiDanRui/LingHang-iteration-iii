@@ -26,6 +26,8 @@ class Auth
                 $_SESSION[CURRENT_LOGIN_NAME] = $data[0]['name'];
                 $_SESSION[CURRENT_LOGIN_AVATAR] = $data[0]['avatar'];
                 $_SESSION[CURRENT_LOGIN_ID] = $data[0]['id'];
+                $_SESSION[CURRENT_LOGIN_PRAISE_RATE_SELLER] = $data[0]['good_seller'];
+                $_SESSION[CURRENT_LOGIN_PRAISE_RATE_BUYER] = $data[0]['good_buyer'];
                 return true;
             }else
             {
@@ -50,7 +52,8 @@ class Auth
             'name'=>$_SESSION[CURRENT_LOGIN_NAME],
             'avatar'=>$_SESSION[CURRENT_LOGIN_AVATAR],
             'id'=>$_SESSION[CURRENT_LOGIN_ID],
-
+            'good_seller'=>$_SESSION[CURRENT_LOGIN_PRAISE_RATE_SELLER],
+            'good_buyer'=>$_SESSION[CURRENT_LOGIN_PRAISE_RATE_BUYER],
         ];
     }
 
@@ -72,7 +75,7 @@ class Auth
 
     public function logout()
     {
-        if($_SESSION[CURRENT_LOGIN_VERIFIED])
+        if(isset($_SESSION[CURRENT_LOGIN_VERIFIED])&&$_SESSION[CURRENT_LOGIN_VERIFIED])
         {
             $_SESSION[CURRENT_LOGIN_VERIFIED] = false;
             return ('success');

@@ -22,8 +22,8 @@ return[
 //    'category'=>'type',
 //
 //    'messages.created_at'=>'time',
-//    'good_buyer'=>'praise-rate-buyer',
-//    'good_seller'=>'praise-rate-seller',
+//    'good_buyer'=>'praise_rate_buyer',
+//    'good_seller'=>'praise_rate_seller',
 //
 //    'talker_id'=>'commenter',
 //    'score1'=>'score-express',
