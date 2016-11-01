@@ -41,7 +41,7 @@ class CommodityController extends Controller
             $this->show(
                 true,
                 [
-                    'commodities'=>$this->convertAllForHtml($commodities),
+                    'commodities'=>($commodities),
                     'bound'=>end($commodities)['id'],
                     'parameters'=>$parameters,
                 ]

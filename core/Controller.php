@@ -47,7 +47,7 @@ class Controller
         $response = [
             'result'=>$result===true||$result==='success'?'success':'failed',
             'auth'=>$this->convertAllForHtml($this->auth->currentUserInfo()),
-            'main'=>$this->convertAllForHtml($content),
+            'main'=>($content),
         ];
         echo json_encode($response);
         Model::delete();
