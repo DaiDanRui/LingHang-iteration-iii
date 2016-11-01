@@ -40,9 +40,9 @@ return [
     ],
 
 
-    /* http://127.0.0.1/search/all/1/null/id/asc/-1/0/sports */
+    /* http://127.0.0.1/search/all/1/null/id/asc/sports */
 
-    '/search/:type/:page/:keyword/:order/:desc/:bound/:original_page/:category'=>[
+    '/search/:type/:page/:keyword/:order/:desc/:category'=>[
         ['GET'],  ['commodity','search'],['access_limit']
     ],
     '/search'=>[

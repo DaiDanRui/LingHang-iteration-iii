@@ -27,14 +27,12 @@ class CommodityController extends Controller
                 'keyword'=>['default_value:'],
                 'order'=>['enum:id|created_at|update_at'],
                 'desc'=>['enum:desc|asc','default_value:asc'],
-                'bound'=>['integer','default_value:-1'],
-                'original_page'=>['integer:>|0','default_value:0'],
                 'category'=>['default_value:all'],
             ]
         );
-        list($type,$page,$keyword,$order, $desc,$bound,$original_page,$category)=array_values($parameters);
+        list($type,$page,$keyword,$order, $desc,$category)=array_values($parameters);
         $count = PAGE_SIZE;
-        $commodities = $this->model->search($type,$page,$original_page,$category, $keyword,$order, $desc,$bound,$count);
+        $commodities = $this->model->search($type,$page, 0,$category, $keyword,$order, $desc,-1,$count);
         convertCommoditiesForHtml('pic_paths',$commodities);
         if($commodities)
         {
@@ -56,8 +54,13 @@ class CommodityController extends Controller
     {
         $parameters = $request->validate(['id'=>['integer']]);
         $commodity = $this->model->find_by_id(current($parameters));
-        convertCommoditiesForHtml($commodity);
-        dump($commodity);
+        if($commodity) {
+            convertCommoditiesForHtml($commodity);
+            $this->show(true,current($commodity));
+        }else
+        {
+            $this->show(false,null);
+        }
     }
 
 
