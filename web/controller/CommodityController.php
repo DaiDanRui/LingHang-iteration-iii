@@ -33,7 +33,7 @@ class CommodityController extends Controller
         list($type,$page,$keyword,$order, $desc,$category)=array_values($parameters);
         $count = PAGE_SIZE;
         $commodities = $this->model->search($type,$page, 0,$category, $keyword,$order, $desc,-1,$count);
-        convertCommoditiesForHtml('pic_paths',$commodities);
+        convertCommoditiesForHtml($commodities);
         if($commodities)
         {
             $this->show(
@@ -56,7 +56,7 @@ class CommodityController extends Controller
         $commodity = $this->model->find_by_id(current($parameters));
         if($commodity) {
             convertCommoditiesForHtml($commodity);
-            $this->show(true,current($commodity));
+            $this->show(true,$commodity[0]);
         }else
         {
             $this->show(false,null);

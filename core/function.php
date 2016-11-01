@@ -70,12 +70,12 @@ function convertType($type)
     return -1;
 }
 
-function convertCommoditiesForHtml($urlKey,&$tableRows,
-                                   $beforeTimeKey='publish_time',$after_time='deadline'
-){
+function convertCommoditiesForHtml(&$tableRows,
+                                   $beforeTimeKey='publish_time',$after_time='deadline')
+{
 
     foreach ($tableRows as &$row){
-        $url = &$row[$urlKey];
+        $url = &$row['pic_paths'];
         $url = explode(',',$url);
         $time = $row['created_at'];
         $row[$beforeTimeKey] = getBeforeTime($time);
