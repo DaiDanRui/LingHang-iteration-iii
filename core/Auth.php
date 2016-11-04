@@ -12,7 +12,6 @@ namespace core;
 class Auth
 {
 
-
     public function login($data,$parameters)
     {
 

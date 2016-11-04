@@ -39,5 +39,4 @@ class BudgetController extends Controller
         $result = $this->model->getOutcomeBudget($this->auth->currentUser());
         dump($result);
     }
-
 }

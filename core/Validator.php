@@ -11,8 +11,8 @@ namespace core;
 
 class Validator
 {
-    protected $failed = [];
-    protected $success = [];
+    protected $failed = null;
+    protected $success = null;
 
     protected $model_to_view;
 
@@ -33,6 +33,8 @@ class Validator
      */
     public function validate(Request $data, $rules){
 
+        $this->failed = [];
+        $this->success = [];
         foreach ($rules as $key=>$rule){
             $view_key = isset($this->model_to_view[$key])?$this->model_to_view[$key]:$key;
             $value = $data->offsetGet($view_key);

@@ -25,7 +25,7 @@ class InformationController extends Controller
 
     public function postInformation(Request $request)
     {
-        $request = $request->validate([
+        $information = $request->validate([
             'school'=>[],
             'school_id'=>[],
             'birth'=>[],
@@ -35,7 +35,17 @@ class InformationController extends Controller
             'introduction'=>[],
             'updated_at'=>['set_value:'.getCurrentDateTime()],
         ]);
-        array_filter($request);
-        $this->model->update_by_assoc($request);
+        $user = $request->validate(
+            [
+                'avatar'=>[],
+                'name'=>[],
+                'nickname'=>[],
+            ]
+        );
+        array_filter($information);
+        array_filter($user);
+        $where = ['id'=>$this->auth->currentUser()];
+        $this->model->update_by_assoc($information, $where, null, true);
+        $this->model->update_by_assoc($user, $where, 'users',true);
     }
 }

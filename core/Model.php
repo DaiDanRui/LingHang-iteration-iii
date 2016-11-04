@@ -96,14 +96,25 @@ class Model
         return $pdo->lastInsertId();
     }
 
-    public function save_multiple($keys,$values, $table=null)
+    public function save_multiple($keys,$values, $table=null, $add_date=false)
     {
         $table = $table?:$this->getTableName();
+        if($add_date)
+        {
+            $keys[] = 'created_at';
+            $keys[] = 'updated_at';
+            $date = getCurrentDateTime();
+        }
         $fields = join(',',$keys);
 
         $values_string = [];
         foreach ($values as $value)
         {
+            if($add_date)
+            {
+                $value[] = $date;
+                $value[] = $date;
+            }
             $values_string[] = join("','", $value);
         }
         $values_string = join("' ),( '",$values_string);
@@ -127,13 +138,21 @@ class Model
         return $pdoStatement->fetchAll();
     }
 
-    public function update_by_assoc($array,$where,$table=null)
+    public function update_by_assoc($array,$where,$table=null, $update_time=false)
     {
-        return $this->update(array_keys($array),array_values($array), $where, $table);
+        return $this->update(
+            array_keys($array),array_values($array), $where, $table, $update_time);
     }
 
-    public function update($fields, $values, $where, $table=null)
+    public function update(
+        $fields, $values, $where, $table=null, $update_time=false)
     {
+        if($update_time)
+        {
+            $date = getCurrentDateTime();
+            $fields[] = 'updated_at';
+            $values[] = $date;
+        }
         $field = join(' =? ,', $fields);
         $table = $table?:$this->getTableName();
 

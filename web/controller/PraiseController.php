@@ -29,16 +29,7 @@ class PraiseController extends Controller
         $this->showResult($result?true:false);
     }
 
-    public function getPraised(Request $request)
-    {
-        $parameters = $request->validate(
-            [
-                'eulogist_id'=>['set_value:'.$this->auth->currentUser()],
-                'type'=>['enum:reward|skill|all'],
-            ]
-        );
-        $this->model->exist(array_keys($parameters),array_values($parameters));
-    }
+
 
     public function isPraised(Request $request)
     {
