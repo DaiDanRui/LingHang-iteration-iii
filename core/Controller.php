@@ -49,6 +49,7 @@ class Controller
             'auth'=>($this->auth->currentUserInfo()),
             'main'=>($content),
         ];
+        dump($response);
         echo json_encode($response);
         Model::delete();
         exit(0);

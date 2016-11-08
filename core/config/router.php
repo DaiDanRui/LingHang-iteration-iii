@@ -69,8 +69,14 @@ return [
     ],
     '/post'=>[
         ['POST'],['commodity','post'],['check','access_limit']
-    ]
+    ],
 
+    '/my/confirmed/:type'=>[
+      ['GET','POST'], ['transaction','getPersonalAccepted'],['check']
+    ],
 
+    '/my/accepted/:type'=>[
+        ['GET','POST'], ['transaction','getPersonalConfirmed'],['check']
+    ],
 
 ];

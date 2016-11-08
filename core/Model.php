@@ -220,9 +220,9 @@ class Model
 
     public function transactionInfo($where,$order=' ',$start=0,$count=PAGE_SIZE)
     {
-        $sql = "SELECT commodities.*,users.name,users.phone,users.avatar,transaction.*"
-            ."group_concat(pictures.pic_path) as pic_paths FROM commodities,users,pictures,transaction"
-            ." WHERE  commodities.id=pictures.id AND transaction.commodity_id=commodities.id"
+        $sql = "SELECT commodities.*,users.name,users.phone,users.avatar,transactions.*,"
+            ." group_concat(pictures.pic_path) as pic_paths FROM commodities,users,pictures,transactions"
+            ." WHERE  commodities.id=pictures.id AND transactions.commodity_id=commodities.id"
             ." AND commodities.publisher_id=users.id ";
 
         $sql .= $where;
@@ -230,7 +230,7 @@ class Model
         $sql .= $order;
 
         $sql .= " LIMIT $start,$count";
-        echo ($sql);
+
         $queryResult = Model::getPDO()->query($sql);
         return $queryResult->fetchAll();
     }

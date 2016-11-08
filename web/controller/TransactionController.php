@@ -13,7 +13,6 @@ use core\Controller;
 use core\Request;
 use web\logic\Sender;
 use web\model\CommodityModel;
-use web\model\TransactionModel;
 
 class TransactionController extends Controller
 {
@@ -88,15 +87,39 @@ class TransactionController extends Controller
             'type'=>['enum:reward|skill|all'],
             'publisher_id'=>['set_value:'.$this->auth->currentUser()]
         ]);
-        $this->model->getPersonalConfirmed($parameters['type'],$parameters['publisher']);
+
+        $commodity = $this->model->getPersonalConfirmed($parameters['type'],$parameters['publisher_id']);
+        if($commodity) {
+            convertCommoditiesForHtml($commodity);
+            $this->show(true,
+                [
+                    'commodity'=>$commodity[0],
+                ]
+            );
+        }else
+        {
+            $this->show(false,null);
+        }
     }
 
-    public function getPersonal(Request $request)
+    public function getPersonalAccepted(Request $request)
     {
         $parameters = $request->validate([
             'type'=>['enum:reward|skill|all'],
             'trader_id'=>['set_value:'.$this->auth->currentUser()]
         ]);
-        $this->model->getPersonal($parameters['type'],$parameters['trader_id']);
+
+        $commodity = $this->model->getPersonalAccepted($parameters['type'],$parameters['trader_id']);
+        if($commodity) {
+            convertCommoditiesForHtml($commodity);
+            $this->show(true,
+                [
+                    'commodity'=>$commodity[0],
+                ]
+            );
+        }else
+        {
+            $this->show(false,null);
+        }
     }
 }

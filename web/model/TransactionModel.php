@@ -26,9 +26,9 @@ class TransactionModel extends Model
         return $this->transactionInfo($where,' ');
     }
 
-    public function getPersonal($type, $trader)
+    public function getPersonalAccepted($type, $trader)
     {
-        $where = " AND transaction.trader_id='$trader' " ;
+        $where = " AND transactions.trader_id='$trader' " ;
         $type = convertType($type);
         if($type && $type!= -1 )
         {
