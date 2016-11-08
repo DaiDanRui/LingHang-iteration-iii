@@ -18,6 +18,7 @@ class TransactionController extends Controller
 {
 
 
+
     public function postTransaction(Request $request)
     {
         $parameters = $request->validate(
@@ -45,6 +46,9 @@ class TransactionController extends Controller
 
     }
 
+
+
+
     public function refuseTransaction(Request $request)
     {
         $parameters = $request->validate(
@@ -62,6 +66,9 @@ class TransactionController extends Controller
             dump($exist);
         }
     }
+
+
+
 
     public function confirmTransaction(Request $request)
     {
@@ -81,6 +88,9 @@ class TransactionController extends Controller
         }
     }
 
+
+
+
     public function getPersonalConfirmed(Request $request)
     {
         $parameters = $request->validate([
@@ -91,16 +101,15 @@ class TransactionController extends Controller
         $commodity = $this->model->getPersonalConfirmed($parameters['type'],$parameters['publisher_id']);
         if($commodity) {
             convertCommoditiesForHtml($commodity);
-            $this->show(true,
-                [
-                    'commodity'=>$commodity[0],
-                ]
-            );
+            $this->show(true,$commodity);
         }else
         {
             $this->show(false,null);
         }
     }
+
+
+
 
     public function getPersonalAccepted(Request $request)
     {
@@ -112,11 +121,7 @@ class TransactionController extends Controller
         $commodity = $this->model->getPersonalAccepted($parameters['type'],$parameters['trader_id']);
         if($commodity) {
             convertCommoditiesForHtml($commodity);
-            $this->show(true,
-                [
-                    'commodity'=>$commodity[0],
-                ]
-            );
+            $this->show(true, $commodity);
         }else
         {
             $this->show(false,null);

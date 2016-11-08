@@ -42,14 +42,18 @@ class Controller
         $this->mapper = $mapper;
     }
 
-    protected function show($result,$content=null){
+    protected function show($result,$content=null)
+    {
 
         $response = [
             'result'=>$result===true||$result==='success'?'success':'failed',
             'auth'=>($this->auth->currentUserInfo()),
             'main'=>($content),
         ];
-        dump($response);
+        if (IF_DEBUG)
+        {
+            dump($response);
+        }
         echo json_encode($response);
         Model::delete();
         exit(0);

@@ -16,12 +16,18 @@ class CommodityModel extends Model
 
     protected $table = 'commodities';
 
+
+
+
+
     public function search($type, $page,$original_page, $category, $keyword, $order, $desc, $bound, $count)
     {
 
         $start = 0;
         $where = '';
         $type = convertType($type);
+
+
         if($bound>=0)
         {
             if($page<$original_page)
@@ -34,6 +40,8 @@ class CommodityModel extends Model
                 $start = ($page-$original_page)*$count;
             }
         }
+
+
         if($type && $type!=-1)
         {
             $where .= " AND commodities.type='$type' ";
@@ -60,16 +68,23 @@ class CommodityModel extends Model
         return $this->commoditiesInfo($where, $order,$start,$count);
     }
 
+
+
+
     public function find_by_id($id)
     {
         $where =  " AND commodities.id='$id' ";
         return $this->commoditiesInfo($where,' ',0,1 );
     }
 
+
+
+
     public function find_by_publisher($publisher, $type, $start=0, $count=PAGE_SIZE)
     {
 
         $where = " AND commodities.publisher_id='$publisher' " ;
+
         $type = convertType($type);
         if($type && $type!= -1 )
         {
@@ -78,14 +93,22 @@ class CommodityModel extends Model
         return $this->commoditiesInfo($where,$where,$start,$count);
     }
 
+
+
+
     public function insert_picture($commodity_id,$paths,$date)
     {
         $fields = ['id','pic_path','created_at','updated_at'];
         $pictures = [];
+
         foreach ($paths as $path)
         {
             $pictures[] = [$commodity_id,$path,$date,$date];
         }
+
         return $this->save_multiple($fields,$pictures);
     }
+
+
+
 }

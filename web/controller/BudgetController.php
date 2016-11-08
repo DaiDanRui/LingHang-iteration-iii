@@ -28,11 +28,15 @@ class BudgetController extends Controller
         $this->model->save($parameter);
     }
 
+
+
     public function getIncome()
     {
         $result = $this->model->getIncomeBudget($this->auth->currentUser());
         dump($result);
     }
+
+
 
     public function getOutcome()
     {

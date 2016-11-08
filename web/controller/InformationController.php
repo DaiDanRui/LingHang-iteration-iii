@@ -23,6 +23,10 @@ class InformationController extends Controller
         $this->model->find('id',$this->auth->currentUser());
     }
 
+
+
+
+
     public function postInformation(Request $request)
     {
         $information = $request->validate([

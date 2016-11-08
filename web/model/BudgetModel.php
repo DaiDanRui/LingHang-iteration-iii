@@ -14,7 +14,13 @@ use core\Model;
 class BudgetModel  extends Model
 {
 
+
+
+
     protected $table = 'budgets';
+
+
+
 
     public function getIncomeBudget($user)
     {
@@ -22,18 +28,27 @@ class BudgetModel  extends Model
         return $this->_getBudget($where);
     }
 
+
+
+
+
     public function getOutcomeBudget($user)
     {
         $where = " WHERE budgets.payer_id='$user' AND users.id=budgets.receiver_id";
         return $this->_getBudget($where);
     }
 
+
+
+
+
     protected function _getBudget($where)
     {
-        $sql = 'SELECT users.name,users.phone,        return $queryResult->fetchAll();
-users.id,users.avatar,users.income,users.outcome,budgets* FROM users,budgets'
-            .$where;
+        $sql = 'SELECT users.name,users.phone,users.id,users.avatar,users.income,users.outcome,budgets* '
+                .'FROM users,budgets'
+                .$where;
         $queryResult = Model::getPDO()->query($sql);
+        return $queryResult->fetchAll();
     }
 
 }

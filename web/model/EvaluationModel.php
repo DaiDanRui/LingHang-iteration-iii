@@ -13,7 +13,13 @@ use core\Model;
 
 class EvaluationModel extends Model
 {
+
+
+
     protected $table = 'evaluations';
+
+
+
 
     protected function getInfo($where = '')
     {
@@ -24,16 +30,25 @@ class EvaluationModel extends Model
         return $queryResult->fetchAll();
     }
 
+
+
+
+
     public function getEvaluation($evaluator_id)
     {
         $where = " WHERE users.id=$evaluator_id AND users.id=evaluations.evaluator_id ";
         return $this->getInfo($where);
     }
 
+
+
+
     public function getEvaluated($evaluated_id)
     {
         $where = " WHERE users.id=$evaluated_id AND users.id=evaluations.evaluated_id ";
         return $this->getInfo($where);
     }
+
+
 
 }

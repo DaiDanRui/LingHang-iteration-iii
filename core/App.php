@@ -103,11 +103,22 @@ class App
 
     protected static function isMatched($url_key){
 
+
         foreach (explode('/', $url_key) as $index=>$url_key_item){
-            if(startsWith($url_key_item,':')){
-                self::$parameters[substr($url_key_item,1)] = isset(self::$url_array[$index])?self::$url_array[$index]:null;
-            }else{
-                if(self::$url_array[$index]!==$url_key_item){
+
+            if(startsWith($url_key_item,':'))
+            {
+                self::$parameters[substr($url_key_item,1)] =
+                    isset(self::$url_array[$index])?self::$url_array[$index]:null;
+            }
+            else
+            {
+                if(!isset(self::$url_array[$index]))
+                {
+                    return true;
+                }
+                elseif(self::$url_array[$index]!==$url_key_item)
+                {
                     return false;
                 }
             }

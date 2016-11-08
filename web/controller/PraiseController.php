@@ -16,6 +16,33 @@ use web\model\PraiseModel;
 class PraiseController extends Controller
 {
 
+    public function getPraised(Request $request)
+    {
+        $parameters = $request->validate([
+            'type'=>['enum:reward|skill|all'],
+            'eulogist_id'=>['set_value:'.$this->auth->currentUser()],
+            'page'=>['integer','default_value:1']
+        ]);
+        $page = $parameters['page'];
+        $commodities = $this->model->getPraised(
+            $parameters['type'],$parameters['eulogist_id'],$page>0?($page-1)*PAGE_SIZE:0,PAGE_SIZE
+        );
+        convertCommoditiesForHtml($commodities);
+
+        if($commodities)
+        {
+            $this->show(
+                true,
+                $commodities
+            );
+        }else
+        {
+            $this->show(false);
+        }
+    }
+
+
+
 
     public function postPraise(Request $request)
     {
@@ -31,6 +58,8 @@ class PraiseController extends Controller
 
 
 
+
+
     public function isPraised(Request $request)
     {
         $parameters = $request->validate(
@@ -42,4 +71,6 @@ class PraiseController extends Controller
         );
         $this->model->exist(array_keys($parameters),array_values($parameters));
     }
+
+
 }

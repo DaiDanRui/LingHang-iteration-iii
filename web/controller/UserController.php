@@ -16,10 +16,17 @@ use core\Request;
 class UserController extends Controller
 {
 
+
+
+
+
     public function getRegister()
     {
         $this->header(REGISTER_PAGE);
     }
+
+
+
 
     public function postRegister(Request $request)
     {
@@ -34,6 +41,10 @@ class UserController extends Controller
         $user_id = $this->model->save($parameters,true);
         $this->show($user_id===false?false:true, $user_id);
     }
+
+
+
+
 
     public function sendConfirmCode(Request $request)
     {
@@ -51,6 +62,10 @@ class UserController extends Controller
         }
     }
 
+
+
+
+
     public function confirmCode(Request $request)
     {
         $parameters = $request->validate([
@@ -65,10 +80,18 @@ class UserController extends Controller
         }
     }
 
+
+
+
+
     public function getLogin()
     {
         $this->header(LOGIN_PAGE);
     }
+
+
+
+
 
     public function postLogin(Request $request)
     {
@@ -94,6 +117,10 @@ class UserController extends Controller
     {
         $this->showResult( $this->auth->logout() );
     }
+
+
+
+
 
     public function change(Request $request)
     {
@@ -131,5 +158,7 @@ class UserController extends Controller
             $this->show(false,$loginResult);
         }
     }
+
+
 
 }

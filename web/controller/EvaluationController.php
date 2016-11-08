@@ -31,10 +31,16 @@ class EvaluationController extends Controller
         $this->model->save($parameters,true);
     }
 
+
+
+
     public function getEvaluation()
     {
         $this->model->getEvaluation($this->auth->currentUser());
     }
+
+
+
 
     public function getEvaluated()
     {

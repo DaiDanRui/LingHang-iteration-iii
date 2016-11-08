@@ -79,4 +79,7 @@ return [
         ['GET','POST'], ['transaction','getPersonalConfirmed'],['check']
     ],
 
+    '/my/praised/:type/:page'=>[
+        ['GET','POST'], ['praise','getPraised'],['check']
+    ],
 ];

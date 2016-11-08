@@ -50,6 +50,8 @@ class CommodityController extends Controller
         }
     }
 
+
+
     public function getCommodity(Request $request)
     {
         $parameters = $request->validate(['id'=>['integer']]);
@@ -70,6 +72,7 @@ class CommodityController extends Controller
             $this->show(false,null);
         }
     }
+
 
 
     public function postCommodity(Request $request)
@@ -93,6 +96,8 @@ class CommodityController extends Controller
         dump($commodity_id);
     }
 
+
+
     public function getPersonal(Request $request)
     {
         $parameter = $request->validate(
@@ -102,11 +107,16 @@ class CommodityController extends Controller
                 'page'=>['integer:>|0','default_value:1'],
             ]
         );
+        $page = $parameter['page'];
         $result = $this->model->find_by_publisher(
-            $parameter['publisher_id'],$parameter['type'],PAGE_SIZE*($parameter['page']-1)
+            $parameter['publisher_id'],$parameter['type'],
+            $page<1?0:PAGE_SIZE*($page-1)
         );
         $this->show(true,$result);
     }
+
+
+
 
     public function remove(Request $request)
     {
@@ -120,6 +130,9 @@ class CommodityController extends Controller
             $this->show(false,'no auth');
         }
     }
+
+
+
 
     public function getPraised(Request $request)
     {
